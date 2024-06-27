@@ -1,0 +1,1 @@
+A high-performance URL shortener that generates unique and custom short URLs, ensures quick resolution and redirection, and implements efficient storage and effective rate limiting to handle high traffic.
