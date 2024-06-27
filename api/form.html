@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>URL Shortener</title>
+</head>
+
+<body>
+    <h1>URL Shortener</h1>
+    <form action="/shorten" method="POST">
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url" required>
+        <label for="custom">Custom Short (optional):</label>
+        <input type="text" id="custom" name="custom">
+        <label for="expiry">Expiry (hours):</label>
+        <input type="number" id="expiry" name="expiry">
+        <button type="submit">Shorten</button>
+    </form>
+    <div id="result"></div>
+</body>
+
+</html>
