@@ -18,7 +18,7 @@ import (
 
 func setupRoutes(app *fiber.App) {
 	app.Get("/", func(c *fiber.Ctx) error {
-		return c.SendFile("./form.html")
+		return c.SendFile("form.html")
 	})
 
 	app.Get("/:url", routes.ResolveURL)
@@ -81,9 +81,11 @@ func main() {
 	}
 
 	app := fiber.New()
+	app.Static("/", "./")
 	app.Use(logger.New())
 
 	setupRoutes(app)
 
 	log.Fatal(app.Listen(os.Getenv("APP_PORT")))
+
 }
