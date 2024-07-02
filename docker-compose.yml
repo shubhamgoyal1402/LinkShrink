@@ -2,16 +2,21 @@ version: '3'
 
 services:
   api:
-    build: api
+    image: shubhamgoyal1402/url-shortner-api:v1.0
     ports:
       - '3000:3000'
     depends_on:
       - db
+    environment:
+      - REDIS_HOST=db
+      - REDIS_PORT=6379
+
   db:
-    build: db
+    image: redis:alpine
     ports:
       - '6379:6379'
     volumes:
       - db-data:/data
+
 volumes:
   db-data:
